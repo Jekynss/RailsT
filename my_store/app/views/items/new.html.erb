@@ -1,0 +1,5 @@
+<h1>Create new item</h1>
+<%= form_for @item do |item|%>
+<%=render partial:"item_fields",locals:{item: item}%>
+<p><%= item.submit "Создать Итем"%></p>
+<%end%>
