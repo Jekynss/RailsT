@@ -10,4 +10,9 @@
 
   App.cable = ActionCable.createConsumer();
 
+  console.log("hello");
+
+
+  
+
 }).call(this);

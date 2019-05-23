@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 		
 	end
 	def create
-		@item=Item.create(params[:item].permit(:price, :name,:weight,:real))
+		@item=Item.create(params[:item].permit!)
 		if @item.errors.empty?
 			redirect_to item_path(@item)
 		else
@@ -35,6 +35,10 @@ class ItemsController < ApplicationController
 		redirect_to action:"index"
 	end
 
+	def check
+		@item=Item.find(params[:id])
+		render plain:"True #{@item.id}"
+	end
 	private
 	def get_item
 		@item=Item.find(params[:id])

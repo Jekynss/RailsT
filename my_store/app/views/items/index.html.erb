@@ -1,5 +1,6 @@
 <h1>All items</h1>
 <% @items.each do |elem|%>
-<h3><%=link_to "item #{elem.id}", item_path(elem)%>
+
+<h3><%=link_to "item #{elem.id}", item_path(elem)%> <span>&nbsp;-&nbsp;</span>
 	<%=link_to "delete",item_path(elem), method: :delete%></h3>
 <%end%>
